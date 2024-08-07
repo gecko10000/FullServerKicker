@@ -1,0 +1,6 @@
+name: FullServerKicker
+main: gecko10000.fullserverkicker.FullServerKicker
+version: 0.1
+api-version: 1.13
+depend:
+  - CMI
