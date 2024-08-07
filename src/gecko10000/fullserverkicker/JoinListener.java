@@ -27,6 +27,11 @@ public class JoinListener implements Listener {
         UUID toKick = null;
         long oldestAfkTime = Long.MAX_VALUE;
         for (Map.Entry<UUID, AfkInfo> entry : CMI.getInstance().getAfkManager().getAfkPlayersMap().entrySet()) {
+            UUID uuid = entry.getKey();
+            Player player = Bukkit.getPlayer(uuid);
+            if (player == null || player.hasPermission("cmi.command.afk.kickbypass")) {
+                continue;
+            }
             long afkTime = entry.getValue().getAfkFrom();
             if (afkTime < oldestAfkTime) {
                 oldestAfkTime = afkTime;

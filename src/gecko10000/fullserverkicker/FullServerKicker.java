@@ -7,6 +7,7 @@ public class FullServerKicker extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(new JoinListener(this), this);
     }
 
